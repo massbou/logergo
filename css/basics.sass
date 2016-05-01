@@ -1,0 +1,51 @@
+@import "animation"
+
+// COLORS
+$yellow : #EBC130
+$blue : #1B75BB
+$lightblue : #3498DB
+$blue_gray : #1D2933
+$white : #ECF0F1
+$brown : #1E1C19
+$green : #0db14b
+$black : #1e1d1a
+$red : #d94d4b
+$orange : #FF9800
+
+// BASICS
+=transition($transition,$duration,$effect)
+    -webkit-transition: $transition $duration $effect
+    -moz-transition:    $transition $duration $effect
+    -ms-transition:      $transition $duration $effect
+    transition:         $transition $duration $effect
+
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius:    $radius
+    -ms-border-radius:     $radius
+    border-radius:         $radius
+    
+=filtre($effect,$value)
+    -webkit-filter: $effect($value)
+    -moz-filter:    $effect($value)
+    -ms-filter:     $effect($value)
+    -o-filter:      $effect($value)
+    filter:         $effect($value)
+    
+=box-sizing($box)
+    -webkit-box-sizing: $box
+    -moz-box-sizing:    $box
+    -ms-box-sizing:     $box
+    -o-box-sizing:      $box
+    box-sizing:         $box
+    
+=animation($animation, $duration, $effect, $repeat, $delay: 0)
+    -webkit-animation: $animation $duration $effect $repeat
+    animation: $animation $duration $effect $repeat
+    -webkit-animation-delay: $delay
+    animation-delay: $delay
+
+.circle
+    border-radius: 100%
+    padding: 0
+    margin: 0

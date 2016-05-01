@@ -1,0 +1,667 @@
+$angle: 360deg
+
+$green-massi: hsla(160,100,50,0.5)
+$color : #1E88E5
+
+@import "basics"
+@import "animation"
+
+
+@font-face
+    font-family: "Bebas Kai"
+    src: url(../font/BebasKai-Regular.otf)
+
+*, *::after, *::before
+    box-sizing: border-box
+    transition: all 0.1s linear
+
+h1
+    font-family: "Bebas Kai"
+    font-size: 56px
+
+body
+    text-align: center
+    padding: 30px
+    font-family: 'Open sans'
+
+.actu
+    background: $white
+    display: inline-block
+    position: relative
+    height: 330px
+    width: 291px
+    margin-left: 10px
+    border-radius: 5px
+    overflow: hidden
+
+    &:hover .title-container
+        transition: all 300ms linear
+        height: 100%
+
+        .actu-options
+            display: block
+
+
+.title-container
+    transition: all 0.4s ease-in-out
+    text-align: left
+    padding: 15px 0 0 20px
+    box-sizing: border-box
+    height: 113px
+    width: 100%
+    position: absolute
+    bottom: 0
+    font-family: "Bebas Kai"
+    font-size: 20px
+    line-height: 0.1
+
+    h3
+        letter-spacing: 1px
+        font-weight: 100
+
+.actu-options
+    transform: all 0.1s linear
+    display: none
+    position: absolute
+    height: 210px
+    width: 100%
+    margin: 0 auto
+    left: 0
+    text-align: center
+    box-sizing: border-box
+    cursor: pointer
+
+.voir-actu
+    border-right: solid $white 2px
+    left: 2%
+    top: 0
+    padding: 20px 0
+
+    &:hover
+
+        i
+            color: $black
+
+.ion-eye
+    font-size: 50px
+
+.icon-del, .icon-edit
+    height: 40px
+    width: 40px
+    text-align: center
+    margin: 0 auto
+    border: solid 2px
+    border-radius: 100%
+
+.voir-actu, .other-opt
+    position: absolute
+    display: inline-block
+    height: 210px
+    width: 48%
+    box-sizing: border-box
+    margin: 0 auto
+    font-size: 30px
+
+.suppr-actu, .edit-actu
+    display: inline-block
+    width: 100%
+    height: 50%
+
+    h3
+        line-height: 0
+        font-size: 30px
+
+.sports , .enseignement
+    .popup
+        //background: rgb(2,151,167)
+        background: #1B75BB
+
+    .title-container
+        color: $white
+        background: rgba(27, 117, 187,0.95)
+
+    .suppr-actu, .edit-actu
+        &:hover
+            color: $black
+
+    .voir-actu
+        &:hover
+            color: $black
+    .edit-actu
+        border-bottom: solid $white 2px
+
+.enseignement
+
+    .title-container
+        background: rgba(217, 77, 75,0.95)
+
+    .popup
+        background: rgb(217, 77, 75)
+
+
+.art-musique, .loisirs
+    .title-container
+        color: $black
+        background: rgba(254,237,87,0.95)
+
+    .popup
+        background: rgb(254,237,87)
+
+
+    .suppr-actu, .edit-actu
+        &:hover
+            color: white
+
+    .voir-actu
+        border-right: solid $black 2px
+
+        &:hover
+            color: white
+            .ion-eye
+                color: white
+
+    .edit-actu
+        border-bottom: solid $black 2px
+
+
+.loisirs
+    .title-container
+        background: rgba(13, 177, 75,0.95)
+
+    .popup
+        background: rgb(13, 177, 75)
+
+.popup
+    color: $black
+    transition: visibility 0.2s ease-in
+    display: none
+    position: fixed
+    z-index: 5
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    height: 100%
+    width: 100%
+    overflow: scroll
+
+    i
+        font-size: 20px
+        position: fixed
+        top: 20px
+        right: 20px
+
+.actu-container
+    min-height: 500px
+    max-width: 600px
+    padding: 40px 0
+    box-sizing: border-box
+    background: rgb(255, 255, 255)
+    border-radius: 3px
+    margin: 50px auto 50px
+    position: relative
+
+    h1
+        font-size: 45px
+        margin: 0
+        line-height: 0
+
+    p
+        font-family: 'Roboto','Open sans'
+        font-weight: 500
+        font-size: 15px
+        line-height: 22px
+        margin: 40px auto 0
+        text-align: justify
+        width: 85%
+
+
+    .date
+        margin-top: 10px
+        position: absolute
+        bottom: 5px
+        left: 45px
+        padding: 10px 0
+
+
+    .auteur
+        margin-top: 10px
+        position: absolute
+        bottom: 5px
+        right: 45px
+        padding: 10px 0
+
+    .actu-img
+        margin: 35px 0 0
+        padding: 5px 0
+        background: $white
+
+        img
+            width: 100%
+
+
+.ajout-acc
+    position: fixed
+    right: -140px
+    top: 85px
+    z-index: 4
+    transition: all 0.4s
+
+    a
+        background-color: rgb(217, 77, 75)
+        font-family: "Roboto"
+        color: white
+        font-size: 30px
+        padding: 10px 10px 10px 0
+        overflow: hidden
+        text-decoration: none
+        position: relative
+
+        i
+            position: absolute
+            font-size: 40px
+            top: 0
+            left: -70px
+            padding: 5px 20px 3.5px 20px
+            background-color: darken(rgb(217, 77, 75), 10%)
+
+
+        span
+            font-size: 35px
+            padding: 0 10px
+            font-weight: 400
+
+    &:hover
+        right: -4px
+
+        i
+            color: black
+
+
+[class^="login-container--"] , .login-container-del
+    display: none
+
+
+
+.champ
+    margin: 10px 0 10px 50%
+    height: 62px
+    position: relative
+    text-align: left
+    transform: translate(-25%,0)
+
+    &::after, &::before
+        content: ''
+        height: 2px
+        background-color: #e6e6e6
+        width: 50%
+        position: absolute
+        bottom: 6px
+        left: 0
+        transition: height 0.2s
+
+    &::after
+        height: 3px
+        background-color: $color
+        transform: scaleX(0)
+        transition: transform 0.3s
+
+
+.champ-label
+    font-size: 18px
+    margin: 0
+    display: block
+    font-weight: 800
+    color: #AFB5BB
+
+    transform: translateY(28px)
+    transition: all 0.3s
+    transform-origin: 0 50%
+
+.champ-input
+    position: relative
+    padding: 8px 0
+    border: none
+    width: 50%
+    height: 32px
+    line-height: 16px
+    outline: none
+    -webkit-appearence : none
+    background: transparent
+    font-size: 16px
+
+
+.valider
+    margin: 30px 0 10px 50%
+    position: relative
+    transform: translate(-50%, 0)
+
+
+.valider-btn, .valider-btn-del
+    -webkit-appearence : none
+    border: none
+    outline: none
+    width: 50%
+    padding: 15px 0 15px
+    margin-bottom: 50px
+    transition: all 0.3s
+    cursor: pointer
+    height: 62px
+    font-size: 18px
+    font-weight: 800
+    color: white
+    background-color: $color
+
+    &:focus, &:hover
+        background-color: #0D47A1
+
+
+.annuler-del
+    -webkit-appearence : none
+    border: none
+    outline: none
+    padding: 20px 140px
+    margin-bottom: 50px
+    transition: all 0.3s
+    cursor: pointer
+    height: 62px
+    font-size: 18px
+    font-weight: 800
+    color: white
+    background-color: $color
+    text-decoration: none
+
+    &:focus, &:hover
+        background-color: #0D47A1
+
+.form-del
+    margin-top: 70px
+
+
+.has-label .champ-label
+    transform: translateY(0px) scale(0.90)
+    font-weight: 550
+
+.is-focused .champ-label
+    color: $color
+
+.champ.is-focused
+    &::before
+        height: 35px
+        background-color: lighten(#AFB5BB, 25%)
+
+.champ.is-focused::after
+    transform: scaleX(1)
+
+
+.login-close
+    cursor: pointer
+    position: absolute
+    right: 10px
+    top: 10px
+
+
+.aide
+    position: absolute
+    font-size: 18px
+    transition: all 0.3s
+    display: inline
+    cursor: pointer
+    color: black
+    margin-left: 10px
+
+
+.aide-txt
+    transition: all 0.4s ease-in-out
+    padding: 0 10px
+    font-size: 14px
+    background-color: lighten(#AFB5BB, 10%)
+    margin-left: 10px
+    opacity: 0
+
+.show
+    opacity: 1
+
+#modifi
+    display: none
+
+#suppr
+    display: none
+
+
+.titre
+    margin: 10px 0 10px 50%
+    height: 72px
+    position: relative
+    transform: translate(-25%, 0)
+    text-align: left
+
+
+    &::after, &::before
+        content: ''
+        height: 2px
+        background-color: #e6e6e6
+        width: 50%
+        position: absolute
+        bottom: 6px
+        left: 0
+        transition: height 0.2s
+    
+    &::after
+        height: 3px
+        background-color: $color
+        transform: scaleX(0)
+        transition: transform 0.3s
+
+
+.first
+    margin-top: 50px
+
+.titre-label
+    font-size: 18px
+    margin: 0
+    display: block
+    font-weight: 800
+    color: #AFB5BB
+
+    transform: translateY(40px)
+    transition: all 0.3s
+    transform-origin: 0 50%
+
+.titre-input
+    position: relative
+    padding: 8px 0
+    border: none
+    width: 50%
+    height: 32px
+    line-height: 16px
+    outline: none
+    -webkit-appearence : none
+    background: transparent
+    font-size: 16px
+
+.desc
+    text-align: left
+    margin: 10px 0 10px 50%
+    position: relative
+    transform: translate(-25%, 0)
+
+    &::after, &::before
+        content: ''
+        height: 2px
+        background-color: #e6e6e6
+        width: 60%
+        position: absolute
+        bottom: 6px
+        left: 0
+        z-index: 15
+
+    &::after
+        z-index: 15
+        height: 3px
+        background-color: $color
+        transform: scaleX(0)
+        transition: transform 0.3s
+
+
+.desc-label
+    position: relative
+    font-size: 18px
+    margin: 0
+    display: block
+    font-weight: 800
+    color: #AFB5BB
+    z-index: 5
+
+    transform: translateY(25px)
+    transition: all 0.3s
+    transform-origin: 0 50%
+
+.desc-text
+    position: relative
+    padding: 8px 0
+    border: none
+    width: 60%
+    min-height: 32px
+    line-height: 16px
+    font-size: 16px
+    outline: none
+    -webkit-appearence : none
+    resize: none
+    z-index: 4
+
+.image
+    text-align: left
+    margin: 30px 0 10px 50%
+    position: relative
+    transform: translate(-25%, 0)
+
+.image-input + label
+    font-size: 18px
+    font-weight: 800
+    color: white
+    background-color: $color
+    display: inline-block
+    width: 50%
+    // height: 32px
+    text-align: center
+    padding: 15px 0 15px
+    cursor: pointer
+    transition: all 0.3s
+
+.image-input:focus + label, .image-input + label:hover
+    background-color: #0D47A1
+    // background-color: white
+    // color: $color
+    // outline: 1px solid $color
+
+.image-input + label *
+    pointer-events: none
+
+
+.image-input
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    overflow: hidden
+    position: absolute
+    z-index: -1
+
+.validerform
+    text-align: left
+    margin: 30px 0 10px 50%
+    position: relative
+    transform: translate(-25%, 0)
+
+
+.validerform-btn
+    -webkit-appearence : none
+    border: none
+    outline: none
+    width: 50%
+    padding: 15px 0 10px
+    margin-bottom: 50px
+    transition: all 0.3s
+    cursor: pointer
+    height: 62px
+    font-size: 18px
+    font-weight: 800
+    color: white
+    background-color: $color
+
+    &:focus, &:hover
+        background-color: #0D47A1
+
+
+
+
+.liste
+    text-align: left
+    margin: 10px 0 10px 50%
+    position: relative
+    transform: translate(-25%, 0)
+    font-family: 'Roboto'
+
+    &::after, &::before
+        content: ''
+        height: 2px
+        background-color: #e6e6e6
+        width: 50%
+        position: absolute
+        bottom: 0px
+        left: 0
+        z-index: 10
+
+    &::after
+        height: 3px
+        background-color: $color
+        transform: scaleX(0)
+        transition: transform 0.3s
+
+
+.liste-sel
+    position: relative
+    width: 50%
+    height: 32px
+    outline: none
+    -webkit-appearence : none !important
+    border: none
+    cursor: pointer
+    margin: 20px 0 0 0
+    optgroup
+        font-size: 14px
+        color: $color
+
+        option
+            color: black
+            font-size: 18px
+            height: 50px !important
+            cursor: pointer
+
+
+.liste-opt
+    height: 30px !important
+
+.has-label .titre-label
+    transform: translateY(5px) scale(0.90)
+    font-weight: 550
+
+.has-label .desc-label
+    transform: translateY(0px) scale(0.90)
+    font-weight: 550
+
+.is-focused .titre-label, .is-focused .desc-label
+    color: $color
+
+.titre.is-focused
+    &::before
+        height: 40px
+        background-color: lighten(#AFB5BB, 25%)
+
+.desc.is-focused
+    .desc-text
+        background-color: lighten(#AFB5BB, 25%)
+        z-index: 4
+
+.titre.is-focused::after, .desc.is-focused::after
+    transform: scaleX(1)
